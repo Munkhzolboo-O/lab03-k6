@@ -1,0 +1,48 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\windows\system32> node --version
+v24.19.0
+PS C:\windows\system32> winget install GrafanaLabs.k6 --source winget
+Found k6 [GrafanaLabs.k6] Version 2.2.0
+This application is licensed to you by its owner.
+Microsoft is not responsible for, nor does it grant any licenses to, third-party packages.
+Downloading https://github.com/grafana/k6/releases/download/v2.2.0/k6-v2.2.0-windows-amd64.msi
+  ██████████████████████████████  29.8 MB / 29.8 MB
+Successfully verified installer hash
+Starting package install...
+Successfully installed
+PS C:\windows\system32> npm install
+npm : File C:\Program Files\nodejs\npm.ps1 cannot be loaded because running scripts is disabled on this system. For
+more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:1
++ npm install
++ ~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+PS C:\windows\system32> cd C:\Users\User\Desktop\lab03-k6-main\lab03-k6-main
+PS C:\Users\User\Desktop\lab03-k6-main\lab03-k6-main> npm.cmd install
+
+added 68 packages, and audited 69 packages in 684ms
+
+28 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+npm notice
+npm notice New major version of npm available! 11.17.0 -> 12.0.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.2
+npm notice To update run: npm install -g npm@12.0.2
+npm notice
+PS C:\Users\User\Desktop\lab03-k6-main\lab03-k6-main> node server.js
+API: http://localhost:3000
+PS C:\Users\User\Desktop\lab03-k6-main\lab03-k6-main> ^C
+PS C:\Users\User\Desktop\lab03-k6-main\lab03-k6-main> k6 run slo-test-chaos.js 2>&1 | Tee-Object results/chaos.txt^C
+PS C:\Users\User\Desktop\lab03-k6-main\lab03-k6-main> node server.js
+API: http://localhost:3000
+PS C:\Users\User\Desktop\lab03-k6-main\lab03-k6-main> node server.js
+API: http://localhost:3000
+PS C:\Users\User\Desktop\lab03-k6-main\lab03-k6-main> node server.js
+API: http://localhost:3000
